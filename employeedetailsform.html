@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign in Form</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link href="bootstrap.css" rel="stylesheet">
+    <!-- Main css -->
+    <link rel="stylesheet" href="form.css">
+     <!-- Custom styles for this template -->
+     <link href="style.css" rel="stylesheet">
+
+     <!-- Responsive styles for this template -->
+     <link href="responsive.css" rel="stylesheet">
+ 
+     <!-- Colors for this template -->
+     <link href="colors.css" rel="stylesheet">
+ 
+     <!-- Version Tech CSS for this template -->
+      <link href="tech.css" rel="stylesheet">
+   
+
+</head>
+<body onload="loadXML()">
+    <div id="wrapper">
+        <header class="tech-header header">
+            <div class="container-fluid">
+                <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+                    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <a class="navbar-brand" href="tech-index.html" style="font-family: times new roman;margin-top:5px;font-size: 36px;margin-right: 400px;height: 50px; ">REAL_ESTATE</a>
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="home.html">Home</a>
+                            </li>
+                                                                        
+                            <li class="nav-item">
+                                <a class="nav-link" href="form.html">Login</a>
+                            </li>
+                             <li class="nav-item">
+                                <a class="nav-link" href="tech-contact.html">Contact</a>
+                            </li>  
+                            <li class="nav-item">
+                                <a class="nav-link" href="tech-about.html">About </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="tech-contact.html">XYZ</a>
+                            </li>
+                        </ul>
+                       
+                    </div>
+                </nav>
+            </div><!-- end container-fluid -->
+        </header><!-- end market-header -->
+        <style>
+            body{
+                font-family: 'Times New Roman', Times, serif;
+                background-color: lightgreen;
+                margin: 0;
+                
+            }
+            
+            h2{
+                background-color: black;
+                color: white;
+                opacity: 0.8;
+                padding: 10px;
+                text-align: center;
+            }
+            td{
+                padding: 7px;
+            }
+            input{
+                height: 30px;
+                border-radius: 10px;
+                border: none;
+                
+            }
+            
+            input:focus{
+                outline: none;
+                border: 1px solid forestgreen;
+            }
+            input:hover{
+                box-shadow: 5px 5px 5px black;
+            }
+            
+            .button{
+                background-color: forestgreen;
+                color:#fff;
+                border: none;
+                padding: 7px
+            }
+            
+            .button:hover {
+                cursor: pointer;
+                box-shadow: 5px 5px 5px forestgreen;
+            }
+        </style>
+    </head>
+    
+    
+        <form id='addRecordForm'>
+
+            <div container5 style="width: 76.5%;  margin-left: auto;
+            margin-right: auto;
+           ">
+            <div id="personal-details">
+            <h2>Personal Details</h2>
+
+            
+                  <table width="100%">
+                    <tr>
+                        <td>Employee Name</td>
+                        <td>
+                            <input type="text" name='Employee_name' id='Employee_name' placeholder="First Name" size="25" >
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Father's Name</td>
+                        <td>
+                            <input type="text" name='Fathers_name' id='Fathers_name' placeholder="Father's Name" size="25">
+                        </td>
+                        <td>Mother's Name</td>
+                        <td>
+                            <input type="text" name='Mothers_name' id='Mothers_name' placeholder="Mothers's Name" size="25">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Date of Birth</td>
+                        <td>
+                            <input type="date" name='Date_of_Birth' id='Date_of_Birth'>
+                        </td>
+                        
+                    </tr>
+                    
+                    
+                    <tr>
+                        <td>Mobile Number</td>
+                        <td>
+                            <input type="number" name='Mobile_no' id='Mobile_no' placeholder="9831****" size="25">
+                        </td>
+                       
+                    </tr>
+                   
+                    
+                    <tr>
+                        <td>Aadhar Number</td>
+                        <td>
+                            <input type="number" placeholder="Aadhar Number" size="25">
+                        </td>
+                        <td>Pan Card Number</td>
+                        <td>
+                            <input type="number" placeholder="Pan Card Number" size="25">
+                        </td>
+                    </tr>
+                    <td>Address</td>
+                    <td>
+                        <input type="text" placeholder="Present address" size="25">
+                    </td>
+                </table>
+            </div>
+            
+            <div id="educational-qualification">
+            <h2> Educational Qualification</h2>
+                <table width="100%">
+                    <tr>
+                        <td>Sl</td>
+                        <td>Qualification</td>
+                        <td>University</td>
+                        <td>Year of Passing</td>
+                        <td>Marks (%)</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>
+                            <input type="text" size="25">
+                        </td>
+                        <td>
+                            <input type="text" size="25">
+                        </td>
+                        <td>
+                            <input type="text" size="25">
+                        </td>
+                        <td>
+                            <input type="text" size="25">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>
+                            <input type="text" size="25">
+                        </td>
+                        <td>
+                            <input type="text" size="25">
+                        </td>
+                        <td>
+                            <input type="text" size="25">
+                        </td>
+                        <td>
+                            <input type="text" size="25">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>
+                            <input type="text" size="25">
+                        </td>
+                        <td>
+                            <input type="text" size="25">
+                        </td>
+                        <td>
+                            <input type="text" size="25">
+                        </td>
+                        <td>
+                            <input type="text" size="25">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>
+                            <input type="text" size="25">
+                        </td>
+                        <td>
+                            <input type="text" size="25">
+                        </td>
+                        <td>
+                            <input type="text" size="25">
+                        </td>
+                        <td>
+                            <input type="text" size="25">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            
+           
+            <div id="work-experience">
+            <h2>Work Experience</h2>
+                <table width="100%">
+                    <tr>
+                        <td>Sl No</td>
+                        <td>Company Address</td>
+                        <td>Work / Role</td>
+                        <td>Duration (form - to)</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>
+                            <input type="text" size="25">
+                        </td>
+                        <td>
+                            <input type="text" size="25">
+                        </td>
+                        <td>
+                            <input type="date" size="25">
+                        </td>
+                        <td>
+                            <input type="date" size="25">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>
+                            <input type="text" size="25">
+                        </td>
+                        <td>
+                            <input type="text" size="25">
+                        </td>
+                        <td>
+                            <input type="date" size="25">
+                        </td>
+                        <td>
+                            <input type="date" size="25">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>
+                            <input type="text" size="25">
+                        </td>
+                        <td>
+                            <input type="text" size="25">
+                        </td>
+                        <td>
+                            <input type="date" size="25">
+                        </td>
+                        <td>
+                            <input type="date" size="25">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>
+                            <input type="text" size="25">
+                        </td>
+                        <td>
+                            <input type="text" size="25">
+                        </td>
+                        <td>
+                            <input type="date" size="25">
+                        </td>
+                        <td>
+                            <input type="date" size="25">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            
+            <!-- Other Details -->
+            <div id="other-details">
+            
+                <table width="100%">
+                
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input type="Submit" value="Submit" class="button" onclick="addNewRecord()">
+                        </td>
+                        
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+            </div>
+        </form>
+        
+     
+        <script src="employeejs.js"></script>
+    </body>
+
+</html>
