@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up Form</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="form.css">
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link href="bootstrap.css" rel="stylesheet">
+    <!-- Main css -->
+    <link rel="stylesheet" href="form.css">
+     <!-- Custom styles for this template -->
+     <link href="style.css" rel="stylesheet">
+
+     <!-- Responsive styles for this template -->
+     <link href="responsive.css" rel="stylesheet">
+ 
+     <!-- Colors for this template -->
+     <link href="colors.css" rel="stylesheet">
+ 
+  
+      <link href="tech.css" rel="stylesheet">
+
+     
+
+      <script type="text/javascript">
+
+var span=document.getElementsByTagName("span");
+
+
+function validate()
+             { 
+               
+    var a =  document.getElementById("name").value;
+    
+    
+     var b = document.getElementById("email").value;
+    
+     var c =document.getElementById("phone").value;
+    
+     var d = document.getElementById("pass").value;
+    
+    
+
+    if((a == null || a == "") && (b == null || b == "") && (c == null || c == "") && (d == null || d == ""))
+   {             
+    
+
+    span[1].innerText="Blank name";
+    document.getElementById("name").style.border="1.5px red solid";
+    span[2].innerText="Blank email";
+    document.getElementById("email").style.border="1.5px red solid";
+    span[3].innerText="Blank password";
+    document.getElementById("pass").style.border="1.5px red solid";
+    span[4].innerText="Blank phone number";
+    document.getElementById("phone").style.border="1.5px red solid";
+    
+    return false;   
+    
+
+     }
+else
+allLetter();
+validateEmail();
+
+password();
+validatePhone(); 
+   
+}
+
+          
+                function validateEmail() {
+          
+                    var user = document.getElementById("email").value;
+                    var user2 = document.getElementById("email");
+                    var re = /^\w+([\.-]?\w+)*@christuniversity.in/;
+                    
+                  
+                    if (user == "") {
+                    span[2].innerText="Blank email***";
+                    user2.style.border="2.5px red solid";
+                    //alert("Email must be filled out");
+                    return false;
+                    }
+                
+        
+                    if (re.test(user)) {
+                        span[2].innerText = 'Valid';
+                        
+                        user2.style.border="1px green solid";
+            
+
+
+                       
+                        password();
+                        return true;
+                    }
+                    else {
+
+                        span[2].innerText="Incorrect Email id";
+                     user2.style.border="1px red solid";
+                       return false;
+                         }
+                }
+        
+        
+        
+    function validatePhone() {
+          
+    var user = document.getElementById("phone").value;
+    var user2 = document.getElementById("phone");
+    var re = /^[7-9][0-9]{9}$/;
+
+
+    if (user == "") {
+                  
+                    
+                    span[4].innerText="Blank phone number***";
+                    user2.style.border="2px red solid";
+                    //alert("Email must be filled out");
+                    return false;
+                   
+                    } 
+          if (re.test(user) & user.length ==10) 
+          {
+            span[4].innerText = 'Valid';
+                        
+             user2.style.border="1px green solid";
+            
+              
+              return true;
+            }
+
+            
+          else {
+        
+              user2.style.border = "red solid 2px";
+              span[4].innerText="Phone no should be of 10 digits";
+              
+              return false;
+          } }
+
+    function allLetter()
+    {
+    var user = document.getElementById("name").value;
+    var user2 = document.getElementById("name");
+    var re = /^[a-zA-Z ]*$/;
+    
+    if (user == "") {span[1].innerText="Blank name***";
+                    user2.style.border="2px red solid";
+                   
+                    return false;
+                    } 
+    if (re.test(user) ) {
+        span[1].innerText = 'Valid';
+                        
+                        user2.style.border="1px green solid";
+            
+            validateEmail();
+           
+        }
+    else {    
+              user2.style.border = "red solid 2px";
+              span[4].innerText="Name should contain only alphabets";
+              return false;
+            
+        }
+
+       
+       }
+    
+    
+function  password()
+{
+    var user = document.getElementById("pass").value;
+    var user2 = document.getElementById("pass");
+    var re = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})/;
+    if (user == "") {
+
+        span[3].innerText="Blank password***";
+                    user2.style.border="2px red solid";
+                  
+                    return false;
+                    } 
+    if (re.test(user) && user.trim().length < 7 ) {
+        span[3].innerText = 'Weak Password';
+                        
+                        user2.style.border="1px green solid";
+                       
+
+
+            validatePhone();
+            
+        }
+        if (re.test(user) && user.trim().length > 7 ) {
+        span[3].innerText = 'Strong Password';
+                        
+                        user2.style.border="1px green solid";
+                       
+
+
+            validatePhone();
+            
+        }
+    else {
+      
+            user2.style.border = "red solid 2px";
+            span[3].innerText="Invalid password***";
+                    user2.style.border="2px red solid";
+            alert("Password must contain : "+  "\n" + "1.minimum of 1 lower case letter [a-z]"+ "\n"  +"2. minimum of 1 upper case letter [A-Z]"+ "\n" +"3. minimum of 1 numeric character [0-9]" + "\n" + " 4.1 special character ");
+            return false;
+        } 
+}
+
+
+function display()
+{
+    if (validate()="true")
+{
+alert("YOU HAVE SUCCESSFULLY REGISTERED")
+}
+
+else
+  return false;
+}
+
+
+function test(event)
+        {
+            let code=event.which;
+            if(code>47&&code<58)
+           
+            return false;
+            else
+            return true;
+            
+        }
+        function test2(event)
+        {
+            let code=event.which;
+            if(code>64&&code<91)
+           
+            return false;
+            else
+            return true;
+            
+        }
+
+</script> 
+
+</head>
+<body >
+ 
+    <div id="wrapper">
+        <header class="tech-header header">
+            <div class="container-fluid">
+                <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+                    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <a class="navbar-brand" href="tech-index.html" style="font-family: times new roman;margin-top:5px;font-size: 36px;margin-right: 400px;height: 50px; ">REAL_ESTATE</a>
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="home.html">Home</a>
+                            </li>
+                                                                        
+                            <li class="nav-item">
+                                <a class="nav-link" href="form.html">Login</a>
+                            </li>
+                             <li class="nav-item">
+                                <a class="nav-link" href="tech-contact.html">Contact</a>
+                            </li>  
+                            <li class="nav-item">
+                                <a class="nav-link" href="tech-about.html">About </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="employeedatabase.html">EMPLOYEE</a>
+                             
+                            </li>
+                        </ul>
+                       
+                    </div>
+                </nav>
+            </div>
+        </header>
+    <div class="main">
+
+
+        <section class="signup">
+            <div class="container1">
+                <div class="signup-content">
+                    <div class="signup-form">
+                        <h2 class="form-title" style="margin-top: 50px;  " > SIGN UP</h2>
+                        
+                        <form method="POST" class="register-form" id="register-form" >
+                            <div class="form-group">
+                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="name" name="name" id="name"    onkeydown=" return test(event)" placeholder="Your Name" ><span ></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="email"><i class="zmdi zmdi-email"></i></label>
+                                <input type="email" name="email" id="email" placeholder="Your Email"><span></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="pass"><i class="zmdi zmdi-lock"></i></label>
+                                <input type="password" name="pass" id="pass" placeholder="Password"><span></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone_no"><i class="zmdi zmdi-lock-outline"></i></label>
+                                <input type="phone" name="phone" id="phone" onkeydown=" return test2(event)" placeholder="Phone no"><span></span>
+                            </div>
+                            <div class="form-group">
+                                <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+                                <label for="agree-term" class="label-agree-term" style="font-size: small;"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+                            </div>
+                            <div class="form-group form-button">
+                                <input type="submit" name="signup" id="signup" class="form-submit" value="Register" onclick="validate(); return false" />
+                            </div>
+                        </form>
+                    </div>
+                    <div class="signup-image">
+                        <figure><img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img4.webp"  style="border-radius: 10px 10px;" alt="sing up image"></figure>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </div>
+    
+ 
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+    <footer class="footer" >
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="widget">
+                        <div class="footer-text text-left">
+                             <a class="navbar-brand" href="tech-about.html" style="font-family: times new roman;margin-top:5px;font-size: 36px;margin-right: 175px;height: 50px; ">REAL_ESTATE</a>
+                            <p> We’ve got you .</p>
+                            
+                            <div class="social">
+                                <a href="" data-toggle="tooltip" data-placement="bottom" title="Facebook" "><i class="fa fa-facebook" ></i></a>              
+                                
+                                <a href="" data-toggle="tooltip" data-placement="bottom" title="Instagram"><i class="fa fa-instagram"></i></a>
+                                
+                                 <a href="" data-toggle="tooltip" data-placement="bottom" title="YouTube"><i class="fa fa-youtube"></i></a>
+                            </div>
+                            
+                            <hr class="invis">
+    
+                            <div class="newsletter-widget text-left">
+                               <!-- <form class="form-inline">
+                                    <input type="text" class="form-control" placeholder="Enter your email address">
+                                    <button type="submit" class="btn btn-primary">SUBMIT</button>
+                                </form>-->
+                            </div><!-- end newsletter -->
+                        </div><!-- end footer-text -->
+                    </div><!-- end widget -->
+                </div><!-- end col -->
+    
+                <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12" >
+                    <div class="widget">
+                        <h2 class="widget-title" style="margin-top: 10px;">Useful Links</h2>
+                        <div class="link-widget">
+                            <ul>
+                                <li><a href="tech-about.html">Home <span></span></a></li>
+                                <li><a href="tech-about.html">About <span></span></a></li>
+                                <li><a href="tech-about.html">Contact <span></span></a></li>
+                                <li><a href="tech-about.html">Xyz<span></span></a></li>
+                                <li><a href="tech-about.html">Xyz <span></span></a></li>
+                            </ul>
+                        </div><!-- end link-widget -->
+                    </div><!-- end widget -->
+                </div><!-- end col -->
+    
+                
+            </div>
+    
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <br>
+                    <div class="copyright">&copy; RealEstate.ty .All rights reserved.</a>.</div>
+                </div>
+            </div>
+        </div><!-- end container -->
+    </footer><!-- end footer -->
+    
+
+    
+</body>
+</html>
