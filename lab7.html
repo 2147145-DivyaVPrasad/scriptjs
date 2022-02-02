@@ -1,110 +1,267 @@
 
-      <!DOCTYPE html>
-      <html lang="en">
-      <head>
-          <meta charset="UTF-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <meta http-equiv="X-UA-Compatible" content="ie=edge">
-          <title>Form</title>
-      
-     
-          <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
-      
-       
-          <link rel="stylesheet" href="form.css">
-         
-          <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
-          <link href="bootstrap.css" rel="stylesheet">
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+           
+    
+    
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta http-equiv="X-UA-Compatible" content="ie=edge">
+            <title>Form</title>
         
-          <link rel="stylesheet" href="form.css">
-          
-           <link href="style.css" rel="stylesheet">
-      
-          
-           <link href="responsive.css" rel="stylesheet">
-       
-         
-           <link href="colors.css" rel="stylesheet">
-       
         
-            <link href="tech.css" rel="stylesheet">
-      
-     
-      
-   </head>
-   
-   <body>
-
-
-
-
-      <div id="wrapper">
-         <header class="tech-header header">
-             <div class="container-fluid">
-                 <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
-                     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                         <span class="navbar-toggler-icon"></span>
-                     </button>
-                     <a class="navbar-brand" href="tech-index.html" style="font-family: times new roman;margin-top:5px;font-size: 36px;margin-right: 400px;height: 50px; border-radius: 5px;background-color: #2eca6a; font-family:Georgia, 'Times New Roman', Times, serif;">REAL_ESTATE</a>
-                     <div class="collapse navbar-collapse" id="navbarCollapse">
-                         <ul class="navbar-nav mr-auto">
-                             <li class="nav-item">
-                                 <a class="nav-link" href="home.html">Home</a>
-                             </li>
-                                                                         
-                             <li class="nav-item">
-                                 <a class="nav-link" href="form.html">Login</a>
-                             </li>
-                              <li class="nav-item">
-                                 <a class="nav-link" href="tech-contact.html">Contact</a>
-                             </li>  
-                             <li class="nav-item">
-                                 <a class="nav-link" href="tech-about.html">About </a>
-                             </li>
-                             <li class="nav-item">
-                                 <a class="nav-link" href="employeedatabase.html">EMPLOYEE</a>
-                              
-                             </li>
-                         </ul>
-                        
-                     </div>
-                 </nav>
-             </div>
-         </header>
-      </div>
-
-
-
-
-
-
-
-
-      <form name = "myform" action = "" style="padding-top:100px">
-         <input type = "text" name = "customer" placeholder="Enter name:"/> 
-         <input type = "button" value = "Set Cookie" onclick = "WriteCookie();"/>
-         <input type = "button" value = "Get Cookie" onclick = "ReadCookie();"/>
-         <input type = "button" value = "Delete Cookie" onclick = "DeleteCookie();"/>
-
-         <br><br>
-
-        <input type = "text" name = "customer_email" placeholder="  Enter email:"/>
-         <input type = "button" value = "Set Cookie" onclick = "WriteCookie1();"/>
-         <input type = "button" value = "Get Cookie" onclick = "ReadCookie1();"/>
-         <input type = "button" value = "Delete Cookie" onclick = "DeleteCookie1();"/>
-
-        <br><br>
-         
+            <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
         
-       
-      </form>
-      <select id="demo" onchange="show()" style="display: block;margin-right: auto;margin-left: auto;border-radius: 5px;background-color: #2eca6a; font-family:Georgia, 'Times New Roman', Times, serif;">
-         <option value="Select Color">Select Color</option>
-         <option value="yellow">YELLOW</option>
-         <option value="purple">PURPLE</option>
-         <option value="red">RED</option>
-         </select>
+        
+            <link rel="stylesheet" href="form.css">
+            
+            <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+            <link href="bootstrap.css" rel="stylesheet">
+            
+            <link rel="stylesheet" href="form.css">
+            
+            <link href="style.css" rel="stylesheet">
+        
+            
+            <link href="responsive.css" rel="stylesheet">
+        
+            
+            <link href="colors.css" rel="stylesheet">
+        
+            
+                <link href="tech.css" rel="stylesheet">
+        
+                <script type = "text/javascript">
+         
+                    function WriteCookie()
+                    {
+                       if( document.myform.customer.value == "" ) {
+                          alert("Enter some value!");
+                          return;
+                       }
+                       cookievalue = escape(document.myform.customer.value) + ";";
+                       document.cookie="name=" + cookievalue;
+                       document.write ("Setting Cookies : " + "name=" + cookievalue );
+                    }
+                    function ReadCookie() {
+                       var allcookies = document.cookie;
+                       document.write ("Cookie : " + allcookies );
+                       // Get all the cookies pairs in an array
+                       cookiearray = allcookies.split(';');
+                       // Now take key value pair out of this array
+                       for(var i=0; i<cookiearray.length; i++) {
+                          name = cookiearray[i].split('=')[0];
+                          value = cookiearray[i].split('=')[1];
+                          document.write ("Key is : " + name + " and Value is : " + value);
+                         
+        
+                       }}
+        
+                       function DeleteCookie() {
+                       var now = new Date();
+                       now.setMonth( now.getMonth() - 1 );
+                       cookievalue = escape(document.myform.customer.value) + ";"
+                       
+                       document.cookie = "name=" + cookievalue;
+                       document.cookie = "expires=" + now.toUTCString() + ";"
+                       document.write("Setting Cookies : " + "name=" + cookievalue );
+                    }
+           
+        
+                    function WriteCookie1()
+                    {
+                       if( document.myform.customer_email.value == "" ) {
+                          alert("Enter some value!");
+                          return;
+                       }
+                       cookievalue = escape(document.myform.customer_email.value) + ";";
+                       document.cookie="email=" + cookievalue;
+                       document.write ("Setting Cookies : " + "email=" + cookievalue );
+                    }
+                    function ReadCookie1() {
+                       var allcookies = document.cookie;
+                       document.write ("All Cookies : " + allcookies );
+                       // Get all the cookies pairs in an array
+                       cookiearray = allcookies.split(';');
+                       // Now take key value pair out of this array
+                       for(var i=0; i<cookiearray.length; i++) {
+                          email = cookiearray[i].split('=')[0];
+                          value = cookiearray[i].split('=')[1];
+                          document.write ("Key is : " + email + " and Value is : " + value);
+                         
+        
+                       }}
+        
+                       function DeleteCookie1() {
+                       var now = new Date();
+                       now.setMonth( now.getMonth() - 1 );
+                       cookievalue = escape(document.myform.customer_email.value) + ";"
+                       
+                       document.cookie = "email=" + cookievalue;
+                       document.cookie = "expires=" + now.toUTCString() + ";"
+                       document.write("Setting Cookies : " + "email=" + cookievalue );
+                    }
+        
+        
+                    function show()
+        {
+            var value=document.getElementById("demo").value;
+            if(value!="Select Color")
+            {
+                document.bgColor=value;
+                document.cookie="color="+value+";expires=Fri,2 Feb 2022 01:00:00 UTC;";
+            }
+        }
+        window.onload=function()
+        {
+            if(document.cookie.length!=0)
+            {
+                var a=document.cookie.split("=");
+                document.getElementById("demo").value=a[2];
+                document.bgColor=a[2];
+            }
+        }
+                function store(){ //stores items in the localStorage
+            var nam = document.getElementById('empName').value;
+            var sal = document.getElementById('salary').value;
+            var key = document.getElementById('key').value; //gets the key from the user
+        
+            const emp = {
+              nam: nam,
+              sal: sal,
+            }
+        
+            window.localStorage.setItem(key,JSON.stringify(emp));  
+        
+        }
+        function retrieveRecords(){ 
+            console.log("retrieve records");
+             var key = document.getElementById('retrieveKey').value;
+            var records = window.localStorage.getItem(key);
+            var paragraph = document.createElement("p");
+            var infor = document.createTextNode(records);
+            paragraph.appendChild(infor);
+            var element = document.getElementById("retrieve");
+            element.appendChild(paragraph);
+        }
+        
+        function ADD(){
+           var pas = document.getElementById('password').value;
+           var key2 = document.getElementById('sskey').value;
+        
+            window.sessionStorage.setItem(key2,pas);  
+        }
+        
+        
+        
+        var prev_handler = window.onload;
+        window.onload = function () {
+            if (prev_handler) {
+                prev_handler();
+            }
+            
+        
+            document.getElementById("empForm").onsubmit = store;
+        
+            
+            document.getElementById("retrieveButton").onclick = retrieveRecords;
+        };
+            
+        
+              </script>
+              
+            
+    </head>
+    
+    <body>
 
+
+
+        <div id="wrapper">
+                <header class="tech-header header">
+                    <div class="container-fluid">
+                        <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+                            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <a class="navbar-brand" href="tech-index.html" style="font-family: times new roman;margin-top:5px;font-size: 36px;margin-right: 400px;height: 50px; border-radius: 5px;background-color: #2eca6a; font-family:Georgia, 'Times New Roman', Times, serif;">REAL_ESTATE</a>
+                            <div class="collapse navbar-collapse" id="navbarCollapse">
+                                    <ul class="navbar-nav mr-auto">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="home.html">Home</a>
+                                        </li>
+                                                                                    
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="form.html">Login</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="tech-contact.html">Contact</a>
+                                        </li>  
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="tech-about.html">About </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="employeedatabase.html">EMPLOYEE</a>
+                                        
+                                        </li>
+                                    </ul>
+                                
+                            </div>
+                        </nav>
+                    </div>
+                </header>
+        </div>
+
+
+
+
+
+
+
+
+        <form name = "myform" action = " " style="padding-top:100px">
+            <input type = "text" name = "customer" placeholder="Enter name:"/> 
+            <input type = "button" value = "Set Cookie" onclick = "WriteCookie();"/>
+            <input type = "button" value = "Get Cookie" onclick = "ReadCookie();"/>
+            <input type = "button" value = "Delete Cookie" onclick = "DeleteCookie();"/>
+
+            <br><br>
+
+            <input type = "text" name = "customer_email" placeholder="  Enter email:"/>
+            <input type = "button" value = "Set Cookie" onclick = "WriteCookie1();"/>
+            <input type = "button" value = "Get Cookie" onclick = "ReadCookie1();"/>
+            <input type = "button" value = "Delete Cookie" onclick = "DeleteCookie1();"/>
+
+            <br><br>
+            
+        
+        
+        </form>
+        <select id="demo" onchange="show()" style="display: block;margin-right: auto;margin-left: auto;border-radius: 5px;background-color: #2eca6a; font-family:Georgia, 'Times New Roman', Times, serif;">
+            <option value="Select Color">Select Color</option>
+            <option value="yellow">YELLOW</option>
+            <option value="purple">PURPLE</option>
+            <option value="aqua">AQUA</option>
+        </select><br>
+    <section id="body">
+
+                <p id = "IMG_UP" style = 
+                "font-size: 15px; font-weight: bold;"> 
+                </p> 
+    
+    <button onclick = "IMG_Fun()" style="border: #2eca6a; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"> 
+    click here 
+    </button> 
+    
+                <p id = "IMG_DOWN" style = 
+                        "color:green; font-size: 20px; font-weight: bold;"> 
+                </p> 
+
+
+    </section>   
+    
+    
          <div id="formDiv">
             <form id="empForm">
                 <h1>Local Storage & Session Storage</h1>
@@ -118,7 +275,7 @@
                 
                 <button type="submit" style="display: block;margin-right: auto;margin-left: auto;border-radius: 5px;background-color: #2eca6a; font-family:Georgia, 'Times New Roman', Times, serif;" onclick="store()">Store Records</button>
             </form>
-            <br>
+                   <br>
             
             <input type="text" id="retrieveKey" placeholder="retrieveKey" required><br>
             <button id="retrieveButton" style="display: block;margin-right: auto;margin-left: auto;border-radius: 5px;background-color: #2eca6a; font-family:Georgia, 'Times New Roman', Times, serif;">Retrieve records</button>
@@ -126,9 +283,7 @@
             <div id="retrieve"></div>
             <br>
             
-            <input type="text" id="removeKey" placeholder="removeKey"   required><br>
-            <button id="removeButton" style="display: block;margin-right: auto;margin-left: auto;border-radius: 5px;background-color: #2eca6a; font-family:Georgia, 'Times New Roman', Times, serif;">Remove record</button>
-            <br><br>
+           
             
            
            
@@ -188,7 +343,7 @@
           </div>
       </footer>
 
-      <script src="./script.js"></script>
+     <script src="./script.js"></script>
 
    </body>
 </html> 
